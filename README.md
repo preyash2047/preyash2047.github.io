@@ -1,42 +1,33 @@
-# Teachable Machine 
-## About
-Teachable Machine is an experiment that makes it easier for anyone to explore machine learning, live in the browser – no coding required. Learn more about the experiment and try it yourself on [g.co/teachablemachine](https://g.co/teachablemachine). 
+# ColorClassifer-TensorFlow.js
+Community version of TensorFlow.js Color Classifier
 
-The experiment is built using the [TensorFlow.js](https://js.tensorflow.org/) library.
+Playlist:
 
-We have also released a boilerplate version of this project that can be used as a starting point for your own projects: [googlecreativelab/teachable-machine-boilerplate](https://github.com/googlecreativelab/teachable-machine-boilerplate)
+* [7.1: TensorFlow.js Color Classifier: Crowdsourcing Data](https://www.youtube.com/watch?v=y59-frfKR58)
 
-## Development
-#### Install dependencies by running (similar to `npm install`)
-```
-yarn
-```
+* [7.2: TensorFlow.js Color Classifier: Saving Data to Firebase](https://www.youtube.com/watch?v=yXl0dM1b43s)
 
-#### Build project
-```
-yarn build
-```
+* [7.3: TensorFlow.js Color Classifier: Cleaning Data Part 1](https://www.youtube.com/watch?v=Xrhrn8HaFPI)
 
-#### Start local server by running 
-```
-yarn run watch
-```
+* [7.4: TensorFlow.js Color Classifier: Cleaning Data Part 2](https://www.youtube.com/watch?v=gRNvA6c4ero)
 
-#### Code Styles
-- There’s a pre-commit hook set up that will prevent commits when there are errors
-- Run `yarn eslint` for es6 errors & warnings
-- Run `yarn stylint` for stylus errors & warnings
+* [7.5: TensorFlow.js Color Classifier: Cleaning Data Part 3](https://www.youtube.com/watch?v=XZgaLBb4tQM)
 
-#### To run https locally:
-https is required to get camera permissions to work when not working with `localhost`
+* [7.6: TensorFlow.js Color Classifier: Training Data Tensors (inputs)](https://www.youtube.com/watch?v=rw_LVFpIzJg)
 
-1. Generate Keys
-```
-openssl genrsa -out server.key 2048
-openssl req -new -x509 -sha256 -key server.key -out server.cer -days 365 -subj /CN=YOUR_IP
-```
-2. Use `yarn run watch-https`
-3. Go to `https://YOUR_IP:3000`, then accept the insecure privacy notice, and proceed.
+* [7.7: TensorFlow.js Color Classifier: Training Data Tensors (one hot encoding)](https://www.youtube.com/watch?v=Gql-LxoGvXA)
 
-## Credit
-This is not an official Google product, but an experiment that was a collaborative effort by friends from [Støj](http://stoj.io/), [Use All Five](https://useallfive.com/) and Creative Lab and [PAIR](https://ai.google/pair/) teams at Google.
+* [7.8: TensorFlow.js Color Classifier: Building the Model](https://www.youtube.com/watch?v=hCT0qFtLdS8)
+
+* [7.9: TensorFlow.js Color Classifier: Softmax and Cross Entropy](https://www.youtube.com/watch?v=r0QvaEra0og)
+
+* [7.10: TensorFlow.js Color Classifier: Training the Model](https://www.youtube.com/watch?v=SyEZ5Yo2ec8)
+
+* [7.11: TensorFlow.js Color Classifier: Animating Loss](https://www.youtube.com/watch?v=GQCKDjg2Z7w)
+
+* [7.12: TensorFlow.js Color Classifier: Prediction](https://www.youtube.com/watch?v=lz2L-sT8bG0)
+
+Other sites:
+* [Crowd Source Repo](https://github.com/CodingTrain/CrowdSourceColorData)
+* [Website](https://codingtrain.github.io/CrowdSourceColorData/)
+* [Tensorflow](https://js.tensorflow.org/)
