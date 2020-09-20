@@ -1,13 +1,84 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <!-- Load the latest version of TensorFlow.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
-  </head>
-  <body>
-    <div id="console"></div>
-    <!-- Add an image that we will use to test -->
-    <video autoplay playsinline muted id="webcam" width="224" height="224"></video>
-    <!-- Load index.js after the content of the page -->
-    <script src="index.js"></script>
-  </body>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Handwritten Text Recognition</title>
+    <meta property="og:image" content="/assets/img/text_recognition.png?h=550c132ffea2462dc84a91bcdc527835">
+    <meta name="description" content="Handwritten Text Recognition is persionalised hand written text recognition website, where user can train model, download and recognition handwritten text. ">
+    <meta http-equiv="og:type" content="website">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.min.css?h=52959c091f93436bf89f2ffec596845e">
+</head>
+
+<body>
+    <header>
+        <!-- Start: header -->
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="padding: 0px;filter: blur(0px);color: rgb(255,255,255);background-color: rgb(113,193,255);">
+            <div class="container">
+                <div><a class="navbar-brand" href="#">Insight Scope </a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button></div>
+                <div
+                    class="collapse navbar-collapse" id="navcol-1" style="color: rgb(255,255,255);">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="/index.html">Home</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="/modeltraining.html">Model Training</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="/textdetection.html">Text Detection</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="/faq.html">FAQ<br></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="/aboutme.html">About Me&nbsp;<br></a></li>
+                    </ul>
+            </div>
+            </div>
+        </nav>
+        <!-- End: header -->
+    </header>
+    <!-- Start: Article List -->
+    <div class="article-list">
+        <div class="container">
+            <!-- Start: Intro -->
+            <div class="intro">
+                <h2 class="text-center">Handwritten Text Recognition</h2>
+                <p class="text-center">tensorflow.js based Handwritten Text Recognition Mode</p>
+            </div>
+            <!-- End: Intro -->
+            <!-- Start: Articles -->
+            <div class="row articles">
+                <div class="col-sm-6 col-md-4 col-lg-6 item"><a href="/modeltraining.html"><img class="rounded img-fluid" src="/assets/img/Demon-Network.jpg?h=b2aa49d6ff8788458cdf03148f76e0ad" style="max-width: 80%;max-height: 70%;"></a>
+                    <h3 class="name">Model Training</h3>
+                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a></div>
+                <div
+                    class="col-sm-6 col-md-4 col-lg-6 item" href="/textdetection.html"><a href="/textdetection.html"><img class="rounded img-fluid" src="/assets/img/text_recognition.png?h=550c132ffea2462dc84a91bcdc527835" style="max-width: 80%;max-height: 80%;" href="/textdetection.html"></a>
+                    <h3 class="name">Text Detection</h3>
+                    <p class="description">Don't have your persionalised&nbsp;</p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a></div>
+        </div>
+        <!-- End: Articles -->
+    </div>
+    </div>
+    <!-- End: Article List -->
+    <footer>
+        <!-- Start: Bold BS4 Footer Social -->
+        <footer id="myFooter">
+            <div class="container-fluid">
+                <div class="row social-networks">
+                    <div class="col"><a href="https://github.com/preyash2047" target="_blank"><i class="fa fa-github"></i></a><a href="https://www.instagram.com/preyash_patel__/"><i class="fa fa-twitter"></i></a><a class="linkedin" href="https://www.linkedin.com/in/preyash2047/"
+                            target="_blank"><i class="fa fa-instagram"></i></a><a class="linkedin" href="https://www.linkedin.com/in/preyash2047/" target="_blank"><i class="fa fa-linkedin"></i></a></div>
+                </div>
+                <div class="row footer-copyright">
+                    <div class="col">
+                        <p>© 2020 Copyright Text ~ Designed By&nbsp;<a href="https://www.linkedin.com/in/preyash2047/" target="_blank">Preyash Patel</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End: Bold BS4 Footer Social -->
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/script.min.js?h=4654ede188b4231ae029e89fbd150d8b"></script>
+</body>
+
 </html>
