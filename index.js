@@ -3,8 +3,6 @@ import {loadGraphModel} from '@tensorflow/tfjs-converter';
 
 const webcamElement = document.getElementById('webcam');
 
-let net;
-
 async function app() {
   console.log('Loading mobilenet..');
 
