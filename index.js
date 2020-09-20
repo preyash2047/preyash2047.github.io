@@ -1,13 +1,10 @@
+import * as tf from '@tensorflow/tfjs';
 const webcamElement = document.getElementById('webcam');
-const classifier = knnClassifier.create();
-
-let net;
 
 async function app() {
-  console.log('Loading mobilenet..');
-
+  console.log('Loading model..');
   // Load the model.
-  net = await mobilenet.load();
+  const model = await tf.loadLayersModel('selective_data_model/model.json');
   console.log('Successfully loaded model');
 
   // Create an object from Tensorflow.js data API which could capture image
@@ -15,14 +12,14 @@ async function app() {
   const webcam = await tf.data.webcam(webcamElement);
   while (true) {
     const img = await webcam.capture();
-    const result = await net.classify(img);
+    //const result = await net.classify(img);
 
-    document.getElementById('console').innerText = `
-      prediction: ${result[0].className}\n
-      probability: ${result[0].probability}
-    `;
+  //  document.getElementById('console').innerText = `
+  //    prediction: ${result[0].className}\n
+  //    probability: ${result[0].probability}
+  //  `;
     // Dispose the tensor to release the memory.
-    img.dispose();
+  //  img.dispose();
 
     // Give some breathing room by waiting for the next animation frame to
     // fire.
