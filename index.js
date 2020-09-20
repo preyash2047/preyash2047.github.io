@@ -1,15 +1,14 @@
-import * as tf from '@tensorflow/tfjs';
 const webcamElement = document.getElementById('webcam');
 
 async function app() {
   console.log('Loading model..');
   // Load the model.
-  const model = await tf.loadGraphModel('selective_data_model/model.json');
+  const model = await tfjs.loadGraphModel('selective_data_model/model.json');
   console.log('Successfully loaded model');
 
   // Create an object from Tensorflow.js data API which could capture image
   // from the web camera as Tensor.
-  const webcam = await tf.data.webcam(webcamElement);
+  const webcam = await tfjs.data.webcam(webcamElement);
   while (true) {
     const img = await webcam.capture();
     //const result = await net.classify(img);
