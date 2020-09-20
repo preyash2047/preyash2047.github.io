@@ -1,9 +1,9 @@
 const webcamElement = document.getElementById('webcam');
 
-async function app() {
+async function init() {
   console.log('Loading model..');
   // Load the model.
-  const model = await tfjs.loadGraphModel('selective_data_model/model.json');
+  model =  await tf.loadModel('selective_data_model/model.json');
   console.log('Successfully loaded model');
 
   // Create an object from Tensorflow.js data API which could capture image
@@ -25,4 +25,4 @@ async function app() {
     await tf.nextFrame();
   }
 }
-app();
+init();
