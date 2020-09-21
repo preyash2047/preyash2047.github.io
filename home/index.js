@@ -2,14 +2,14 @@ let net;
 const webcamElement = document.getElementById('webcam');
 
 // JavaScript
-import * as tf from 'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs';
+import * as tf from '@tensorflow/tfjs';
 async function app() {
   console.log('Loading mobilenet..');
 
   // Load the model.
   //net = await mobilenet.load();
-  //const model = await tf.loadLayersModel('https://foo.bar/tfjs_artifacts/model.json');
-  net = await tf.loadLayersModel('https://foo.bar/tfjs_artifacts/model.json');
+  const model = await tf.loadLayersModel('https://foo.bar/tfjs_artifacts/model.json');
+  //net = await tf.loadLayersModel('https://foo.bar/tfjs_artifacts/model.json');
   console.log('Successfully loaded model');
 
   // Create an object from Tensorflow.js data API which could capture image
