@@ -1,8 +1,9 @@
+import * as tf from 'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs';
 let net;
 const webcamElement = document.getElementById('webcam');
 
 // JavaScript
-import * as tf from '@tensorflow/tfjs';
+
 async function app() {
   console.log('Loading mobilenet..');
 
