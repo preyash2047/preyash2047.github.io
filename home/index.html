@@ -19,11 +19,7 @@
           prediction: ${result[0].className}\n
           probability: ${result[0].probability}
         `;
-        // Dispose the tensor to release the memory.
         img.dispose();
-
-        // Give some breathing room by waiting for the next animation frame to
-        // fire.
         await tf.nextFrame();
       }
     }
