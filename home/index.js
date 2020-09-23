@@ -9,7 +9,7 @@ async function app() {
 
   // Load the model.
   //net = await mobilenet.load();
-  const model = await tf.loadLayersModel('https://foo.bar/tfjs_artifacts/model.json');
+  const model = await tf.loadLayersModel('selective_data_model/model.json');
   //net = await tf.loadLayersModel('https://foo.bar/tfjs_artifacts/model.json');
   console.log('Successfully loaded model');
 
