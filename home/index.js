@@ -1,5 +1,4 @@
-import * as tf from '@tensorflow/tfjs';
-import {loadGraphModel} from '@tensorflow/tfjs-converter';
+
 
 let net;
 const webcamElement = document.getElementById('webcam');
