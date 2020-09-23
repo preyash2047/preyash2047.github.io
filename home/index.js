@@ -1,12 +1,13 @@
-import * as tf from 'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs';
+import * as tf from '@tensorflow/tfjs';
+import {loadGraphModel} from '@tensorflow/tfjs-converter';
+
 let net;
 const webcamElement = document.getElementById('webcam');
 
 // JavaScript
 
 async function app() {
-  console.log('Loading mobilenet..');
-
+  console.log('Loading model');
   // Load the model.
   //net = await mobilenet.load();
   const model = await tf.loadLayersModel('selective_data_model/model.json');
