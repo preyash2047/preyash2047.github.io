@@ -16,8 +16,10 @@
         //prediction = await model.predict(tensorImg).data();
 
         const img = document.getElementById('img');
-        const tensorImg = tf.browser.fromPixels(img).resizeNearestNeighbor([62, 62]).toFloat().expandDims()
-        console.log(tensorImg);
+        //const tensorImg = tf.browser.fromPixels(img).resizeNearestNeighbor([62, 62]).toFloat().expandDims()
+        //Conversion code will go here
+        
+        //console.log(tensorImg);
         const result = await net.predict(img).data();
         console.log(result);
         }
