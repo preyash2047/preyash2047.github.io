@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <!-- Load TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
+    <!-- Place your code in the script tag below. You can also use an external .js file -->
+    <img id="img" crossorigin src="https://i.imgur.com/JlUvsxa.jpg" width="62" height="62"/>
+    <script>
+      let net;
+      async function app() {
+        console.log('Loading mobilenet..');
+        // Load the model.
+        net = await tf.loadLayersModel('selective_data_model/model.json');
+        console.log('Successfully loaded model');
+
+        //let image = document.getElementById("img")   = //let tensorImg =   tf.browser.fromPixels(image).resizeNearestNeighbor([150, 150]).toFloat().expandDims();
+        //prediction = await model.predict(tensorImg).data();
+
+        const img = document.getElementById('img');
+        const tensorImg = tf.browser.fromPixels(img).resizeNearestNeighbor([62, 62]).toFloat().expandDims()
+        console.log(tensorImg);
+        const result = await net.predict(img).data();
+        console.log(result);
+        }
+      app();
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
