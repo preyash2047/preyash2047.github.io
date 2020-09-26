@@ -49,32 +49,53 @@
         <!-- End: header -->
     </header>
     <!-- Start: Script --><div>
+  <script>
+  function preview() {
+    frame.src=URL.createObjectURL(event.target.files[0]);
+    let net;
+    async function app() {
+      console.log('Loading mobilenet..');
+      // Load the model.
+      net = await tf.loadLayersModel('assets/selective_data_model/model.json');
+      console.log('Successfully loaded model');
+      const img = document.getElementById('img');
+      const tfImg = tf.browser.fromPixels(img);
+      const smalImg = tf.image.resizeBilinear(tfImg, [64, 64]);
+      const resized = tf.cast(smalImg, 'float32');
+      const t4d = tf.tensor4d(Array.from(resized.dataSync()),[1,64,64,3]);
+      var abcd = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+      const result = await net.predict(t4d).data();
+      //console.log(abcd[result.indexOf(1)]);
+      document.getElementById('output').innerText = "Maybe it is '" + abcd[result.indexOf(1)] + "'";
+      console.log(result);
+    }
+    app();
+  }
+    </script>
 </div>
     <!-- End: Script -->
     <div>
         <div class="container">
-            <div class="row p-5">
-                <div class="col-md-6 col-xl-12">
-                    <h2 class="text-center pt-1 pb-3"><strong>Text Recognition</strong></h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-xl-4 offset-xl-3">
-                    <h3>Select Image</h3>
-                    <form>
-                      <form>
-                        <input type="file" onchange="preview()">
-                        <img id="frame" src="assets\img\no-preview-available.png" width="64" height="64"/>
-                        <p id="output" />
-                      </form>
-                </div>
-                <div class="col-md-6 col-xl-3"></div>
-            </div>
             <div class="row">
                 <div class="col">
                     <h3 id="output" class="text-center p-1"></h3>
                 </div>
             </div>
+            <form>
+                <div class="custom-file">
+                    <div class="form-row p-5">
+                        <div class="col-md-6 col-xl-12">
+                            <h2 class="text-center pt-1 pb-3"><strong>Text Recognition</strong></h2>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 col-xl-4 offset-xl-3">
+                            <h3>Select Image</h3><input type="file" class="btn btn-light"></div>
+                        <div class="col-md-6 col-xl-3">
+                            <h3>Image Preview</h3><img id="frame" class="img-thumbnail" src="/assets/img/no-preview-available.png?h=824917b166935ea4772542bec6e8f636" width="200" height="200"></div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
     <footer>
