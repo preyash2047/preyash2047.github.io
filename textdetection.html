@@ -89,6 +89,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
     <script src="/assets/js/script.min.js?h=fdf50df7d638329a7b0b8d3f5f9d8683"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
     <script>
     var x = document.getElementById("Imgfile");
     var txt = "";
@@ -126,7 +127,6 @@
         var abcd = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
         const result = await net.predict(t4d).data();
         console.log(abcd[result.indexOf(1)]);
-
         console.log(result);
         }
     app();
