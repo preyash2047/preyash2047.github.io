@@ -85,9 +85,11 @@
                 <div class="col-md-6 col-xl-4 offset-xl-3">
                     <h3>Select Image</h3>
                     <form>
-                        <div class="custom-file"><input type="file" class="btn btn-light">
-                            <h3>Image Preview</h3><img id="frame" class="img-thumbnail" src="/assets/img/no-preview-available.png?h=824917b166935ea4772542bec6e8f636" width="200" height="200"></div>
-                    </form>
+                      <form>
+                        <input type="file" onchange="preview()">
+                        <img id="frame" src="assets\img\no-preview-available.png" width="64" height="64"/>
+                        <p id="output" />
+                      </form>
                 </div>
                 <div class="col-md-6 col-xl-3"></div>
             </div>
