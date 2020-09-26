@@ -3,7 +3,9 @@
     <!-- Load TensorFlow.js -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
     <!-- Place your code in the script tag below. You can also use an external .js file -->
-    <img id="img" crossorigin src="https://i.imgur.com/JlUvsxa.jpg" width="62" height="62"/>
+    <img id="img" crossorigin src="crop2.png" width="62" height="62"/>
+
+    <p id="output" />
     <script>
       let net;
       async function app() {
@@ -20,8 +22,9 @@
 
         var abcd = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
         const result = await net.predict(t4d).data();
-        console.log(abcd[result.indexOf(1)]);
+        //console.log(abcd[result.indexOf(1)]);
 
+        document.getElementById('output').innerText = "Maybe it is '" + abcd[result.indexOf(1)] + "'";
         console.log(result);
         }
       app();
