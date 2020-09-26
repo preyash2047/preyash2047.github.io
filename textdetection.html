@@ -73,29 +73,26 @@
   }
     </script>
 </div>
-    <!-- End: Script -->
-    <div>
-        <div class="container">
-            <div class="row p-5">
-                <div class="col-md-6 col-xl-12">
-                    <h2 class="text-center pt-1 pb-3"><strong>Text Recognition</strong></h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col"></div>
-                <div class="col text-center">
-                    <form>
-                        <div class="custom-file">
-                            <h3 class="pb-2">Select Image</h3><input type="file" class="btn btn-light pb-1">
-                            <h3 class="p-1">Image Preview</h3><img id="frame" class="img-thumbnail p-2" src="/assets/img/no-preview-available.png?h=824917b166935ea4772542bec6e8f636" width="200" height="200">
-                            <h3 id="output" class="text-center p-1"></h3>
-                        </div>
-                    </form>
-                </div>
-                <div class="col"></div>
+    <!-- End: Script --><div>
+    <div class="container">
+        <div class="row p-5">
+            <div class="col-md-6 col-xl-12">
+                <h2 class="text-center pt-1 pb-3"><strong>Text Recognition</strong></h2>
             </div>
         </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col text-center">
+                <form>
+                    <input type="file" onchange="preview()">
+                    <img id="frame" class="p-1" src="/assets/img/no-preview-available.png?h=824917b166935ea4772542bec6e8f636" width="270" height="200"/>
+                    <p id="output" />
+                </form>
+            </div>
+            <div class="col"></div>
+        </div>
     </div>
+</div>
     <footer>
         <!-- Start: Footer --><style>
     .myfooter{
