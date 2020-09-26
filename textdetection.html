@@ -49,29 +49,6 @@
         <!-- End: header -->
     </header>
     <!-- Start: Script --><div>
-  <script>
-  function preview() {
-    frame.src=URL.createObjectURL(event.target.files[0]);
-    let net;
-    async function app() {
-      console.log('Loading mobilenet..');
-      // Load the model.
-      net = await tf.loadLayersModel('assets/selective_data_model/model.json');
-      console.log('Successfully loaded model');
-      const img = document.getElementById('img');
-      const tfImg = tf.browser.fromPixels(img);
-      const smalImg = tf.image.resizeBilinear(tfImg, [64, 64]);
-      const resized = tf.cast(smalImg, 'float32');
-      const t4d = tf.tensor4d(Array.from(resized.dataSync()),[1,64,64,3]);
-      var abcd = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-      const result = await net.predict(t4d).data();
-      //console.log(abcd[result.indexOf(1)]);
-      document.getElementById('output').innerText = "Maybe it is '" + abcd[result.indexOf(1)] + "'";
-      console.log(result);
-    }
-    app();
-  }
-    </script>
 </div>
     <!-- End: Script -->
     <div>
