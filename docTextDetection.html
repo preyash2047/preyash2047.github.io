@@ -50,33 +50,71 @@
         </nav>
         <!-- End: header -->
     </header>
-    <!-- Start: Article List -->
-    <div class="article-list">
-        <div class="container">
-            <!-- Start: Intro -->
-            <div class="intro">
-                <h2 class="text-center">Handwritten Text Recognition</h2>
-                <p class="text-center">tensorflow.js based Handwritten Text Recognition</p>
-            </div>
-            <!-- End: Intro -->
-            <!-- Start: Articles -->
-            <div class="row articles">
-                <div class="col-sm-6 col-md-4 col-lg-4 item" href="/textdetection.html"><a href="/modeltraining.html"><img class="rounded img-fluid" src="/assets/img/Demon-Network.jpg?h=b2aa49d6ff8788458cdf03148f76e0ad" style="max-width: 80%;max-height: 70%;"></a>
-                    <h3 class="name">Model Training</h3>
-                    <p class="description">having difficulty in recognising your handwriting,<br>try our module to train a model based on your handwriting style,<br>Sounds exciting click here to try now</p><a class="action" href="/modeltraining.html"><i class="fa fa-arrow-circle-right"></i></a></div>
-                <div
-                    class="col-sm-6 col-md-4 col-lg-4 item" href="/pocr.html"><a href="/pocr.html"><img class="rounded img-fluid" src="/assets/img/ocr.png?h=a0faea004a039e777878e64a1ba3ee62" style="max-width: 80%;max-height: 80%;" href="/textdetection.html"></a>
-                    <h3 class="name">Personalised Text Recognition<br></h3>
-                    <p class="description">use personalised text recognition module to recognize text from your unique handwriting style<br>try this module with your pre-trained model<br>#hot #P_OCR</p><a class="action" href="/pocr.html"><i class="fa fa-arrow-circle-right"></i></a></div>
-            <div
-                class="col-sm-6 col-md-4 col-lg-4 item" href="/textdetection.html"><a href="/textdetection.html"><img class="rounded img-fluid" src="/assets/img/text_recognition.png?h=550c132ffea2462dc84a91bcdc527835" style="max-width: 80%;max-height: 80%;" href="/textdetection.html"></a>
-                <h3 class="name">Text Detection</h3>
-                <p class="description">having computerised text,<br>use standard text recognition module,<br>Click here to try now</p><a class="action" href="/textdetection.html"><i class="fa fa-arrow-circle-right"></i></a></div>
+    <!-- Start: Script --><div>
+  <script type="text/javascript">
+  function preview() {
+    frame.src=URL.createObjectURL(event.target.files[0]);
+    let net;
+    async function app() {
+      console.log('Loading mobilenet..');
+      // Load the model.
+      net = await tf.loadLayersModel('assets/selective_data_model/model.json');
+      console.log('Successfully loaded model');
+      const img = document.getElementById('img');
+      const tfImg = tf.browser.fromPixels(img);
+      const smalImg = tf.image.resizeBilinear(tfImg, [64, 64]);
+      const resized = tf.cast(smalImg, 'float32');
+      const t4d = tf.tensor4d(Array.from(resized.dataSync()),[1,64,64,3]);
+      var abcd = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+      const result = await net.predict(t4d).data();
+      //console.log(abcd[result.indexOf(1)]);
+      document.getElementById('output').innerText = "Maybe it is '" + abcd[result.indexOf(1)] + "'";
+      console.log(result);
+    }
+    app();
+  }
+    </script>
+</div>
+    <!-- End: Script -->
+    <!-- Start: html --><div>
+  <div class="container">
+    <div class="row pt-5">
+      <div class="col">
+        <h2 class="text-center">
+          <strong>Document Text Recognition (DTD)
+            <br>
+            <h3 class="pt-5 p-1">Select Image</h3>
+          </strong>
+        </h2>
+      </div>
+
     </div>
-    <!-- End: Articles -->
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <input class="custom-file text-center" type="file" onchange="preview()">
+      </div>
+      <div class="col"></div>
     </div>
-    </div>
-    <!-- End: Article List -->
+    <form>
+      <div class="row">
+        <div class="col">
+        </div>
+        <div class="col text-center">
+          <h3 class="pt-4">Input Image</h3>
+          <img id="frame" class="p-1" src="/assets/img/no-preview-available.png?h=824917b166935ea4772542bec6e8f636" width="270" height="200"/>
+        </div>
+        <div class="col text-center">
+          <h3 class="pt-4">Output Image</h3>
+          <img id="output" class="p-1" src="/assets/img/no-preview-available.png?h=824917b166935ea4772542bec6e8f636" width="270" height="200"/>
+        </div>
+        <div class="col"/>
+      </div>
+    </form>
+  </div>
+</div>
+
+    <!-- End: html -->
     <footer>
         <!-- Start: Footer --><style>
     .myfooter{
